@@ -20,26 +20,33 @@ body {
     text-align: center;
 }
 
-#status-text {
+#status-bar {
     position: absolute;
-    top: 10px; /* Vị trí cách phần trên của game-area */
-    left: 50%; /* Căn giữa theo chiều ngang */
-    transform: translateX(-50%);
-    color: #000;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: rgba(255, 255, 255, 0.7); /* Nền trắng mờ */
+    top: 0;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 10;
+}
+#happiness-bar{
+    display: block;
+    padding-left: 30%;
+}
+
+#happiness-bar, #danger-bar {
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 10; /* Hiển thị trên tất cả các phần tử khác */
 }
 
-
 #game-area {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 700px;
+    height: 100%;
     background-image: url('bg.jpg');
     border: 2px solid #000;
     overflow: hidden;
@@ -61,8 +68,9 @@ body {
     border-radius: 50%;
     border: 2px solid #000;
     bottom: 0;
-    transition: transform 1s linear; /* Thêm thuộc tính transition nếu chưa có */
+    transition: transform 1s linear;
 }
+
 #instructions {
     position: fixed;
     top: 50%;
@@ -77,36 +85,18 @@ body {
     text-align: center;
     z-index: 1000;
 }
+
 #logo {
-    width: 150px; /* Điều chỉnh kích thước theo ý muốn */
-    margin-bottom: 10px; /* Tạo khoảng cách với chữ "Bubble Game" */
-}
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-image: url('background-start.jpg'); /* Thay bằng đường dẫn ảnh background bạn muốn */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
+    width: 150px;
+    margin-bottom: 10px;
 }
 
 #menu {
-    background-color: rgba(255, 255, 255, 0.5); /* Màu trắng với độ trong suốt 50% */
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Đổ bóng nhẹ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     text-align: center;
-}
-
-#logo {
-    width: 150px; /* Kích thước logo */
-    margin-bottom: 10px;
 }
 
 #menu h1 {
@@ -121,11 +111,42 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #4caf50; /* Màu xanh */
+    background-color: #4caf50;
     color: white;
     transition: background-color 0.3s;
 }
 
 #menu button:hover {
-    background-color: #45a049; /* Màu đậm hơn khi hover */
+    background-color: #45a049;
+}
+#game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+#game-over h2 {
+    margin: 0 0 20px;
+}
+
+#game-over button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#game-over button:hover {
+    background-color: #45a049;
 }

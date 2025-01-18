@@ -169,7 +169,9 @@ function createBubbles() {
     }
 }
 // End game
+// End game
 function endGame() {
     isPlaying = false;
     gameOverScreen.classList.remove("hidden");
+    gameOverScreen.style.display = "block"; // Hiển thị thông báo Game Over
 }
