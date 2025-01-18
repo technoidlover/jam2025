@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="menu">
+        <img id="logo" src="logo.jpg" alt="Logo Bubble Game">
+        <h1>Bubble Game</h1>
+        <button id="start-game">Chơi / Play</button>
+        <button id="show-instructions">Hướng dẫn / Instructions</button>
+    </div>
+    
+    <div id="instructions" class="hidden">
+        <h2>Hướng dẫn / Instructions</h2>
+        <p>
+            <b>Tiếng Việt:</b><br>
+            Trong trò chơi này, nhiệm vụ của bạn là giữ cho đứa trẻ vui vẻ bằng cách click vào đứa bé để tăng chỉ số "Vui vẻ". 
+            <br>
+            - Bấm vào bóng để giảm chỉ số "Nguy hiểm". <br>
+            - Nếu "Vui vẻ" giảm xuống 0% hoặc "Nguy hiểm" đạt 100%, trò chơi sẽ kết thúc.
+            <br><br>
+            <b>English:</b><br>
+            In this game, your task is to keep the child happy by clicking on the child to increase the "Happiness" level.
+            <br>
+            - Click on the balloons to decrease the "Danger" level. <br>
+            - If "Happiness" drops to 0% or "Danger" reaches 100%, the game will end.
+        </p>
+        <button id="close-instructions">Đóng / Close</button>
+    </div>
+    
+
+    <div id="game" class="hidden">
+        <div id="status-bar">
+            <div id="happiness-bar">
+                <span id="happiness-text">Vui vẻ: 100%</span>
+            </div>
+            <div id="danger-bar">
+                <span id="danger-text">Nguy hiểm: 0%</span>
+            </div>
+        </div>
+        <div id="game-area">
+            <img id="baby" src="baby3.png" alt="Đứa trẻ">
+        </div>
+        <div id="game-over" class="hidden">
+            <h2>Game Over</h2>
+            <button id="restart-game">Chơi lại</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
