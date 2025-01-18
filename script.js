@@ -55,6 +55,14 @@ startGameButton.addEventListener("click", () => {
 restartGameButton.addEventListener("click", () => {
     location.reload();
 });
+function updateBars() {
+    happinessText.textContent = `Vui vẻ: ${happiness.toFixed(1)}%`;
+    dangerText.textContent = `Nguy hiểm: ${danger.toFixed(1)}%`;
+
+    if (happiness <= 0 || danger >= 100) {
+        endGame();
+    }
+}
 
 // Game loop
 function startGame() {
